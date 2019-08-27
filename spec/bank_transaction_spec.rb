@@ -15,7 +15,7 @@ describe BankTransaction do
   end
 
   it 'raises an error if neither credit nor debit is stated on instantiation' do
-    expect { BankTransaction.new(amount: 1000, type: 'creddie', date: '01/01/2019') }.to raise_error("Invalid" \
+    expect { BankTransaction.new(amount: 1000, type: 'debie', date: '01/01/2019') }.to raise_error("Invalid" \
       " transaction type")
   end
 

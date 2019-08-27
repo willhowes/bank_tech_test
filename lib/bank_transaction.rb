@@ -11,9 +11,7 @@ class BankTransaction
     @date = date
     check_amount_format(amount)
     check_date_format(date)
-    if type != 'credit' || type != 'debit'
-      raise 'Invalid transaction type'
-    end
+    check_type_format(type)
   end
 
   private
@@ -30,6 +28,12 @@ class BankTransaction
     if !amount.is_a?(Integer)
       raise 'Invalid amount format'
     end
+  end
+
+  def check_type_format(type)
+    p "TYPE: #{type}"
+    raise 'Invalid transaction type' unless type == 'credit' || type == 'debit'
+    
   end
 end
 
