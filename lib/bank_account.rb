@@ -1,3 +1,5 @@
+require 'pry'
+
 class BankAccount
 
   def initialize
@@ -16,4 +18,10 @@ class BankAccount
     @current_balance
   end
 
+  def read_transactions
+    [ {'date' => '01/01/2019', 'ammount' => 100, 'balance' => 100} ]
+  end
+
 end
+
+# binding.pry
