@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-27T14:30:39+01:00">2019-08-27T14:30:39+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-27T14:41:52+01:00">2019-08-27T14:41:52+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.06
+         1.92
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>46</b> relevant lines. 
-    <span class="green"><b>46</b> lines covered</span> and
+    <b>53</b> relevant lines. 
+    <span class="green"><b>53</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#9d531928066b006e9c3d4c7ef84b6ea2edfd018a" class="src_link" title="spec/bank_account_spec.rb">spec/bank_account_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>67</td>
-        <td>32</td>
-        <td>32</td>
+        <td>81</td>
+        <td>39</td>
+        <td>39</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.5</td>
       </tr>
       
     </tbody>
@@ -290,8 +290,8 @@
     <h3>spec/bank_account_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
-      <span class="green"><b>32</b> lines covered</span> and
+      <b>39</b> relevant lines. 
+      <span class="green"><b>39</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -386,7 +386,7 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.deposit(100, &#39;01/01/2019&#39;)</code>
+          <code class="ruby">      make_deposit</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
@@ -398,13 +398,13 @@
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">                                                  &#39;amount&#39; =&gt; 100,</code>
+          <code class="ruby">                                                  &#39;amount&#39; =&gt; 1000,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">                                                  &#39;balance&#39; =&gt; 100 }])</code>
+          <code class="ruby">                                                  &#39;balance&#39; =&gt; 1000 }])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -428,31 +428,31 @@
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.deposit(100, &#39;25/12/2018&#39;)</code>
+          <code class="ruby">      make_deposit</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.deposit(50, &#39;26/12/2018&#39;)</code>
+          <code class="ruby">      @account.deposit(500, &#39;26/12/2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(@account.read_transactions).to eq([{ &#39;date&#39; =&gt; &#39;25/12/2018&#39;,</code>
+          <code class="ruby">      expect(@account.read_transactions).to eq([{ &#39;date&#39; =&gt; &#39;01/01/2019&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">                                                  &#39;amount&#39; =&gt; 100,</code>
+          <code class="ruby">                                                  &#39;amount&#39; =&gt; 1000,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">                                                  &#39;balance&#39; =&gt; 100 },</code>
+          <code class="ruby">                                                  &#39;balance&#39; =&gt; 1000 },</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -464,13 +464,13 @@
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">                                                  &#39;amount&#39; =&gt; 50,</code>
+          <code class="ruby">                                                  &#39;amount&#39; =&gt; 500,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">                                                  &#39;balance&#39; =&gt; 150 }])</code>
+          <code class="ruby">                                                  &#39;balance&#39; =&gt; 1500 }])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -494,13 +494,13 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.deposit(1000, &#39;01/01/2019&#39;)</code>
+          <code class="ruby">      make_deposit</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.withdrawal(500, &#39;02/01/2019&#39;)</code>
+          <code class="ruby">      make_withdrawal</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="35">
@@ -569,133 +569,217 @@
           <code class="ruby">    it &#39;amends the account balance by the amount deposited&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="46">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="46">
+          <span class="hits">2</span>
           
-          <code class="ruby">      expect { @account.deposit(1000, &#39;13/01/2012&#39;) }.to change { @account.read_current_balance }.by(1000)</code>
+          <code class="ruby">      expect { make_deposit }.to change {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="covered" data-hits="2" data-linenumber="47">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        @account.read_current_balance }.by(1000)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;raises an error if not given right number of arguments&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="50">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      expect { @account.deposit(1000) }.to raise_error(ArgumentError)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="51">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect { @account.deposit }.to raise_error(ArgumentError)</code>
+          <code class="ruby">      expect { @account.deposit(1000) }.to raise_error(ArgumentError)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="52">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect { @account.deposit(1000, &#39;13/01/2012&#39;, &#39;01/01/2018&#39;) }.to raise_error(ArgumentError)</code>
+          <code class="ruby">      expect { @account.deposit }.to raise_error(ArgumentError)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="covered" data-hits="2" data-linenumber="53">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect { @account.deposit(1000,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">              &#39;13/01/2012&#39;, &#39;01/01/2018&#39;) }.to raise_error(ArgumentError)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &#39;.withdrawal&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;amends the reduces the account balance by the withdrawal amount&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="58">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      expect { @account.withdrawal(500, &#39;01/01/2019&#39;) }.to change { @account.read_current_balance }.by(-500)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;raises an error if not given right number of arguments&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="62">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      expect { @account.withdrawal(1000) }.to raise_error(ArgumentError)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="63">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      expect { @account.withdrawal }.to raise_error(ArgumentError)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="64">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      expect { @account.withdrawal(1000, &#39;13/01/2012&#39;, &#39;01/01/2018&#39;) }.to raise_error(ArgumentError)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;.withdrawal&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;amends the reduces the account balance by the withdrawal amount&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="60">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      expect { make_withdrawal }.to change {</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="61">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        @account.read_current_balance }.by(-500)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;raises an error if not given right number of arguments&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="65">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      expect { @account.withdrawal(1000) }.to raise_error(ArgumentError)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="66">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      expect { @account.withdrawal }.to raise_error(ArgumentError)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="67">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      expect { @account.withdrawal(1000, &#39;13/01/2012&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">        &#39;01/01/2018&#39;) }.to raise_error(ArgumentError)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def make_deposit</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="76">
+          <span class="hits">4</span>
+          
+          <code class="ruby">  @account.deposit(1000, &#39;01/01/2019&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def make_withdrawal</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="80">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  @account.withdrawal(500, &#39;02/01/2019&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">end</code>
