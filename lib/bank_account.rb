@@ -4,10 +4,13 @@ class BankAccount
 
   def initialize
     @current_balance = 0
+    @transaction_history = []
   end
 
   def deposit(amount, date)
     @current_balance += amount
+    @transaction_history << { 'date' => date, 'amount' => amount,
+                            'balance' => @current_balance } 
   end
 
   def withdrawal(amount)
@@ -19,7 +22,7 @@ class BankAccount
   end
 
   def read_transactions
-    [ {'date' => '01/01/2019', 'ammount' => 100, 'balance' => 100} ]
+    @transaction_history
   end
 
 end

@@ -13,7 +13,16 @@ describe BankAccount do
   describe '.read_transactions' do
     it 'returns details of one transaction' do
       @account.deposit(100, '01/01/2019')
-      expect(@account.read_transactions).to eq([{'date' => '01/01/2019', 'ammount' => 100, 'balance' => 100} ])
+      expect(@account.read_transactions).to eq([{'date' => '01/01/2019',
+            'amount' => 100, 'balance' => 100} ])
+    end
+
+    it 'returns details of two transactions' do
+      @account.deposit(100, '25/12/2018')
+      @account.deposit(50, '26/12/2018')
+      expect(@account.read_transactions).to eq([ {'date' => '25/12/2018',
+            'amount' => 100, 'balance' => 100},
+            {'date' => '26/12/2018', 'amount' => 50, 'balance' => 150}])
     end
   end
 
