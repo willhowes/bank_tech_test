@@ -14,17 +14,14 @@ describe BankAccountHistory do
                                                       " || balance\n"\
                                                       " || || || 0.00")
     end
-  end
 
-  describe '.read_transactions' do
-    xit 'returns details of one transaction' do
-      allow(transaction).to receive(:amount).and_return 1000
+    it 'prints a statement with details of one transaction' do
+      allow(transaction).to receive(:amount).and_return 1000.00
+      allow(transaction).to receive(:type).and_return "credit"
       allow(transaction).to receive(:date).and_return "01/01/2019"
       @account_history.receive_transaction(transaction)
-      expect(@account_history.read_transactions).to eq([{ 'date' => '01/01/2019',
-                                                  'type' => 'credit',
-                                                   'amount' => 1000,
-                                                  'balance' => 1000 }])
+      expect(@account_history.print_statement).to eq("date || credit || debit || balance\n"\
+                                                      "01/01/2019 || 1000.00 || || 1000.00")
     end
   end
 end

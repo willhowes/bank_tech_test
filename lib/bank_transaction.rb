@@ -25,7 +25,7 @@ class BankTransaction
   end
 
   def check_amount_format(amount)
-    if !amount.is_a?(Integer)
+    if !amount.is_a?(Float)
       raise 'Invalid amount format'
     end
   end
@@ -33,7 +33,7 @@ class BankTransaction
   def check_type_format(type)
     p "TYPE: #{type}"
     raise 'Invalid transaction type' unless type == 'credit' || type == 'debit'
-    
+
   end
 end
 
