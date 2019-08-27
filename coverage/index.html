@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-27T12:18:24+01:00">2019-08-27T12:18:24+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-27T12:21:08+01:00">2019-08-27T12:21:08+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.4
+         1.7
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>16</b> relevant lines. 
-    <span class="green"><b>16</b> lines covered</span> and
+    <b>21</b> relevant lines. 
+    <span class="green"><b>21</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,21 +53,21 @@
       <tr>
         <td class="strong"><a href="#7098b0a20304b4819abb2c02137f4260e97f8e33" class="src_link" title="lib/bank_account.rb">lib/bank_account.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>7</td>
-        <td>7</td>
+        <td>19</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#9d531928066b006e9c3d4c7ef84b6ea2edfd018a" class="src_link" title="spec/bank_account_spec.rb">spec/bank_account_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>9</td>
-        <td>9</td>
+        <td>25</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.7</td>
       </tr>
       
     </tbody>
@@ -91,8 +91,8 @@
     <h3>lib/bank_account.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -118,8 +118,8 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">    @current_balance = 0</code>
         </li>
@@ -163,13 +163,13 @@
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">  def read_current_balance</code>
+          <code class="ruby">  def withdrawal(amount)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="12">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          <code class="ruby">    @current_balance</code>
+          <code class="ruby">    @current_balance -= amount</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -184,7 +184,31 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def read_current_balance</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="16">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    @current_balance</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -200,8 +224,8 @@
     <h3>spec/bank_account_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -239,8 +263,8 @@
           <code class="ruby">  before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    @account = BankAccount.new</code>
         </li>
@@ -290,7 +314,7 @@
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;amends the balance by the amount deposited&#39; do</code>
+          <code class="ruby">    it &#39;amends the account balance by the amount deposited&#39; do</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="15">
@@ -312,6 +336,48 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;.withdrawal&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;amends the reduces the account balance by the withdrawal amount&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="22">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      expect{@account.withdrawal(500)}.to change{@account.read_current_balance}.by(-500)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>

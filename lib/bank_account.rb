@@ -8,6 +8,10 @@ class BankAccount
     @current_balance += amount
   end
 
+  def withdrawal(amount)
+    @current_balance -= amount
+  end
+
   def read_current_balance
     @current_balance
   end
