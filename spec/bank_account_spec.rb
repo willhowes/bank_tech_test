@@ -85,6 +85,11 @@ describe BankAccount do
       expect { @account.withdrawal(1000, '13/01/2012',
         '01/01/2018') }.to raise_error(ArgumentError)
     end
+
+    it 'raises an error if the wrong format is provided for amount' do
+      expect { @account.withdrawal('100', '01/01/2019' ) }.to raise_error(""\
+        "Invalid amount format")
+    end
   end
 end
 
