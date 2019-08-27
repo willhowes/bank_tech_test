@@ -11,14 +11,8 @@ describe BankAccount do
   end
 
   describe '.deposit' do
-
-    it 'returns the amount deposited' do
-      expect(@account.deposit(1000)).to eq 1000
-    end
-
     it 'amends the balance by the amount deposited' do
       expect{@account.deposit(1000)}.to change{@account.read_current_balance}.by(1000)
     end
-
   end
 end
