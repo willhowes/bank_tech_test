@@ -12,12 +12,12 @@ class BankAccountHistory
 
   def print_statement
     if @transaction_history.empty?
-      return "date || credit || debit || balance\n"\
-      " || || || 0.00"
+      return "#{print_statement_first_line} || || || 0.00"
     else
       statement_lines = []
       @transaction_history.each do | transaction |
-        statement_lines << "#{ transaction.date } || #{ '%.2f' % transaction.amount } || || #{ '%.2f' % @current_balance }"
+        statement_lines << "#{ transaction.date } || "\
+        "#{ '%.2f' % transaction.amount } || || #{ '%.2f' % @current_balance }"
       end
       return "#{ print_statement_first_line }#{ print_statement_lines(statement_lines) }"
     end
