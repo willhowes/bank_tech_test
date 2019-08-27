@@ -1,12 +1,14 @@
 ## Classes
-### BankAccountTransactions
+### BankTransaction
 #### Variables:
+* credit_or_debit
+* amount
+* date
 
 #### Methods
-* deposit (i.e. pay in)
-- arguments: date, amount
-* withdrawal
-- arguments: date, amount
+* read_amount
+* read_date
+* read_credit_or_debit
 
 ### BankAccountHistory
 #### Variables:
@@ -14,7 +16,7 @@
 * transaction_history (hash? or array of hashes)
 
 #### Methods
-* print statement
+* print statement (string)
 
 
 BankAccountTransactions.deposit -----> BankAccountHistory
