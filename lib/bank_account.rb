@@ -20,7 +20,7 @@ class BankAccount
 
   def withdrawal(amount, date)
     check_amount_format(amount)
-    
+    check_date_format(date)
     @current_balance -= amount
     @transaction_history << { 'date' => date,
                               'type' => 'debit',
