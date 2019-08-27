@@ -3,15 +3,20 @@ require 'bank_transaction'
 describe BankTransaction do
 
   it 'raises an error if the wrong format is provided for amount' do
-    expect { BankTransaction.new(amount: "1000", type: 'credit', date: '01/01/2019') }.to raise_error(""\
+    expect { BankTransaction.new(amount: '1000', type: 'credit', date: '01/01/2019') }.to raise_error(""\
       "Invalid amount format")
   end
 
   it 'raises an error is wrong format for date is provided' do
-    expect { BankTransaction.new(amount: 1000, type: 'credit', date: '99/01/2019') }.to raise_error("Invalid" \
+    expect { BankTransaction.new(amount: 1000, type: 'credit', date: '32/01/2019') }.to raise_error("Invalid" \
       " date format")
     expect { BankTransaction.new(amount: 1000, type: 'credit', date: '01/13/2019') }.to raise_error("Invalid" \
       " date format")
+  end
+
+  it 'raises an error if neither credit nor debit is stated on instantiation' do
+    expect { BankTransaction.new(amount: 1000, type: 'creddie', date: '01/01/2019') }.to raise_error("Invalid" \
+      " transaction type")
   end
 
   xit 'has a starting balance of 0' do

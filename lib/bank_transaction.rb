@@ -11,6 +11,9 @@ class BankTransaction
     @date = date
     check_amount_format(amount)
     check_date_format(date)
+    if type != 'credit' || type != 'debit'
+      raise 'Invalid transaction type'
+    end
   end
 
   private
