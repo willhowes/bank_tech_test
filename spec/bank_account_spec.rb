@@ -14,7 +14,8 @@ describe BankAccount do
     it 'returns details of one transaction' do
       make_deposit
       expect(@account.read_transactions).to eq([{ 'date' => '01/01/2019',
-                                                  'amount' => 1000,
+                                                  'type' => 'credit',
+                                                   'amount' => 1000,
                                                   'balance' => 1000 }])
     end
 
@@ -22,9 +23,11 @@ describe BankAccount do
       make_deposit
       @account.deposit(500, '26/12/2018')
       expect(@account.read_transactions).to eq([{ 'date' => '01/01/2019',
+                                                  'type' => 'credit',
                                                   'amount' => 1000,
                                                   'balance' => 1000 },
                                                 { 'date' => '26/12/2018',
+                                                  'type' => 'credit',
                                                   'amount' => 500,
                                                   'balance' => 1500 }])
     end
@@ -33,9 +36,11 @@ describe BankAccount do
       make_deposit
       make_withdrawal
       expect(@account.read_transactions).to eq([{ 'date' => '01/01/2019',
+                                                  'type' => 'credit',
                                                   'amount' => 1000,
                                                   'balance' => 1000 },
                                                   { 'date' => '02/01/2019',
+                                                    'type' => 'debit',
                                                     'amount' => 500,
                                                     'balance' => 500 } ])
     end

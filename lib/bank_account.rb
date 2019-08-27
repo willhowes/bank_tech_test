@@ -8,13 +8,17 @@ class BankAccount
 
   def deposit(amount, date)
     @current_balance += amount
-    @transaction_history << { 'date' => date, 'amount' => amount,
+    @transaction_history << { 'date' => date,
+                              'type' => 'credit',
+                              'amount' => amount,
                               'balance' => @current_balance }
   end
 
   def withdrawal(amount, date)
     @current_balance -= amount
-    @transaction_history << { 'date' => date, 'amount' => amount,
+    @transaction_history << { 'date' => date,
+                              'type' => 'debit',
+                              'amount' => amount,
                               'balance' => @current_balance }
   end
 
