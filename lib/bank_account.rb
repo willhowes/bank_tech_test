@@ -8,10 +8,7 @@ class BankAccount
   end
 
   def deposit(amount, date)
-    if !amount.is_a?(Integer)
-      raise 'Invalid amount format'
-    end
-
+    check_amount_format(amount)
     check_date_format(date)
 
     @current_balance += amount
@@ -22,9 +19,8 @@ class BankAccount
   end
 
   def withdrawal(amount, date)
-    if !amount.is_a?(Integer)
-      raise 'Invalid amount format'
-    end
+    check_amount_format(amount)
+    
     @current_balance -= amount
     @transaction_history << { 'date' => date,
                               'type' => 'debit',
@@ -47,6 +43,12 @@ class BankAccount
       Date.parse(date)
     rescue ArgumentError
       raise "Invalid date format"
+    end
+  end
+
+  def check_amount_format(amount)
+    if !amount.is_a?(Integer)
+      raise 'Invalid amount format'
     end
   end
 end
