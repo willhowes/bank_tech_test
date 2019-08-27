@@ -7,6 +7,9 @@ class BankAccount
   end
 
   def deposit(amount, date)
+    if !amount.is_a?(Integer)
+      raise 'Invalid amount format'
+    end
     @current_balance += amount
     @transaction_history << { 'date' => date,
                               'type' => 'credit',
