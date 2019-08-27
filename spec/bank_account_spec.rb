@@ -10,10 +10,13 @@ describe BankAccount do
     expect(@account.read_current_balance).to eq 0
   end
 
-  it 'stores details of a transaction' do
-    @account.deposit(100, '01/01/2019')
-    expect(@account.read_transactions).to eq([{'date' => '01/01/2019', 'ammount' => 100, 'balance' => 100} ])
+  describe '.read_transactions' do
+    it 'returns details of one transaction' do
+      @account.deposit(100, '01/01/2019')
+      expect(@account.read_transactions).to eq([{'date' => '01/01/2019', 'ammount' => 100, 'balance' => 100} ])
+    end
   end
+
 
   describe '.deposit' do
     it 'amends the account balance by the amount deposited' do
