@@ -4,7 +4,7 @@ class BankAccount
     @current_balance = 0
   end
 
-  def deposit(amount)
+  def deposit(amount, date)
     @current_balance += amount
   end
 

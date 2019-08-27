@@ -12,7 +12,11 @@ describe BankAccount do
 
   describe '.deposit' do
     it 'amends the account balance by the amount deposited' do
-      expect{@account.deposit(1000)}.to change{@account.read_current_balance}.by(1000)
+      expect{@account.deposit(1000, '13/01/2012')}.to change{@account.read_current_balance}.by(1000)
+    end
+
+    it 'accepts two arguments - the amount and the date' do
+      expect{@account.deposit(1000, '13/01/2012')}.not_to raise_error(ArgumentError)
     end
   end
 
