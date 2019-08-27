@@ -1,7 +1,7 @@
 # require 'pry'
 require 'date'
 
-class BankAccount
+class BankAccountTransactions
   def initialize
     @current_balance = 0
     @transaction_history = []
@@ -12,6 +12,7 @@ class BankAccount
     check_date_format(date)
 
     @current_balance += amount
+
     @transaction_history << { 'date' => date,
                               'type' => 'credit',
                               'amount' => amount,
@@ -21,7 +22,9 @@ class BankAccount
   def withdrawal(amount, date)
     check_amount_format(amount)
     check_date_format(date)
+
     @current_balance -= amount
+
     @transaction_history << { 'date' => date,
                               'type' => 'debit',
                               'amount' => amount,

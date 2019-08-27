@@ -1,7 +1,34 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/bank_tech_test/spec/bank_account_spec.rb": [
+      "/Users/student/Projects/bank_tech_test/spec/bank_account_history_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Projects/bank_tech_test/lib/bank_account_history.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Projects/bank_tech_test/spec/bank_account_transactions_spec.rb": [
         1,
         null,
         1,
@@ -114,7 +141,7 @@
         2,
         null
       ],
-      "/Users/student/Projects/bank_tech_test/lib/bank_account.rb": [
+      "/Users/student/Projects/bank_tech_test/lib/bank_account_transactions.rb": [
         null,
         1,
         null,
@@ -129,6 +156,7 @@
         7,
         null,
         5,
+        null,
         5,
         null,
         null,
@@ -138,7 +166,9 @@
         1,
         5,
         4,
+        null,
         2,
+        null,
         2,
         null,
         null,
@@ -173,6 +203,6 @@
         null
       ]
     },
-    "timestamp": 1566915452
+    "timestamp": 1566916885
   }
 }
