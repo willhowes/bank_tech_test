@@ -12,7 +12,7 @@ class BankAccount
                               'balance' => @current_balance }
   end
 
-  def withdrawal(amount)
+  def withdrawal(amount, date)
     @current_balance -= amount
   end
 

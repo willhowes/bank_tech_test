@@ -32,22 +32,25 @@ describe BankAccount do
 
   describe '.deposit' do
     it 'amends the account balance by the amount deposited' do
-      expect { @account.deposit(1000, '13/01/2012') }.to
-        change { @account.read_current_balance }.by(1000)
+      expect { @account.deposit(1000, '13/01/2012') }.to change { @account.read_current_balance }.by(1000)
     end
 
     it 'raises an error if not given right number of arguments' do
       expect { @account.deposit(1000) }.to raise_error(ArgumentError)
       expect { @account.deposit }.to raise_error(ArgumentError)
-      expect { @account.deposit(1000, '13/01/2012', '01/01/2018') }.to
-        raise_error(ArgumentError)
+      expect { @account.deposit(1000, '13/01/2012', '01/01/2018') }.to raise_error(ArgumentError)
     end
   end
 
   describe '.withdrawal' do
     it 'amends the reduces the account balance by the withdrawal amount' do
-      expect { @account.withdrawal(500) }.to
-        change { @account.read_current_balance }.by(-500)
+      expect { @account.withdrawal(500, '01/01/2019') }.to change { @account.read_current_balance }.by(-500)
+    end
+
+    it 'raises an error if not given right number of arguments' do
+      expect { @account.withdrawal(1000) }.to raise_error(ArgumentError)
+      expect { @account.withdrawal }.to raise_error(ArgumentError)
+      expect { @account.withdrawal(1000, '13/01/2012', '01/01/2018') }.to raise_error(ArgumentError)
     end
   end
 end
