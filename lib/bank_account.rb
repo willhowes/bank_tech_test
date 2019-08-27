@@ -11,11 +11,9 @@ class BankAccount
     if !amount.is_a?(Integer)
       raise 'Invalid amount format'
     end
-    begin
-      Date.parse(date)
-    rescue ArgumentError
-      raise "Invalid date format"
-    end
+
+    check_date_format(date)
+
     @current_balance += amount
     @transaction_history << { 'date' => date,
                               'type' => 'credit',
@@ -37,6 +35,16 @@ class BankAccount
 
   def read_transactions
     @transaction_history
+  end
+
+  private
+
+  def check_date_format(date)
+    begin
+      Date.parse(date)
+    rescue ArgumentError
+      raise "Invalid date format"
+    end
   end
 end
 
