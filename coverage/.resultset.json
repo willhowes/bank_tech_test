@@ -5,22 +5,37 @@
         1,
         null,
         1,
+        null,
         1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
         1,
         null,
         1,
         1,
+        null,
         null,
         null
       ],
       "/Users/student/Projects/bank_tech_test/lib/bank_account.rb": [
         1,
+        null,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1566903008
+    "timestamp": 1566903892
   }
 }
