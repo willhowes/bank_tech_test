@@ -4,7 +4,7 @@ class BankAccount
     amount
   end
 
-  def print_current_balance
+  def print_balance
     0
   end
 

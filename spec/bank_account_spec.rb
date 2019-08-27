@@ -7,7 +7,7 @@ describe BankAccount do
   end
 
   it 'has a starting balance of 0' do
-    expect(@account.print_current_balance).to eq 0
+    expect(@account.print_balance).to eq 0
   end
 
   describe '.deposit' do
