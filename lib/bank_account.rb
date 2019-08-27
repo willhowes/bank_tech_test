@@ -1,4 +1,5 @@
 # require 'pry'
+require 'date'
 
 class BankAccount
   def initialize
@@ -9,6 +10,11 @@ class BankAccount
   def deposit(amount, date)
     if !amount.is_a?(Integer)
       raise 'Invalid amount format'
+    end
+    begin
+      Date.parse(date)
+    rescue ArgumentError
+      raise "Invalid date format"
     end
     @current_balance += amount
     @transaction_history << { 'date' => date,

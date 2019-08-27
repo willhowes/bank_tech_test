@@ -60,9 +60,17 @@ describe BankAccount do
     end
 
     it 'raises an error if the wrong format is provided for amount' do
-      expect {@account.deposit('100', '01/01/2019' )}.to raise_error("Invalid "\
-        "amount format")
+      expect { @account.deposit('100', '01/01/2019' ) }.to raise_error(""\
+        "Invalid amount format")
     end
+
+    it 'raises an error is wrong format for date is provided' do
+      expect { @account.deposit(100, "31/06/2019") }.to raise_error("Invalid" \
+        " date format")
+      expect { @account.deposit(100, "01/13/2019") }.to raise_error("Invalid" \
+        " date format")
+    end
+
   end
 
   describe '.withdrawal' do
