@@ -14,18 +14,18 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-27T16:52:51+01:00">2019-08-27T16:52:51+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-27T17:02:52+01:00">2019-08-27T17:02:52+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">58.62%</span></span>
+    (<span class="covered_percent"><span class="red">65.52%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.62
+         0.87
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>4</b> files in total.
     <b>87</b> relevant lines. 
-    <span class="green"><b>51</b> lines covered</span> and
-    <span class="red"><b>36</b> lines missed </span>
+    <span class="green"><b>57</b> lines covered</span> and
+    <span class="red"><b>30</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#d73754491e197513a71a07a3370b43cc7cbff437" class="src_link" title="lib/bank_transaction.rb">lib/bank_transaction.rb</a></td>
-        <td class="red strong">76.47 %</td>
+        <td class="green strong">100.0 %</td>
         <td>33</td>
         <td>17</td>
-        <td>13</td>
-        <td>4</td>
-        <td>0.8</td>
+        <td>17</td>
+        <td>0</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#b13140bd81dd489f43581c4c9c828efc6c7ff115" class="src_link" title="spec/bank_transaction_spec.rb">spec/bank_transaction_spec.rb</a></td>
-        <td class="red strong">44.68 %</td>
+        <td class="red strong">48.94 %</td>
         <td>107</td>
         <td>47</td>
-        <td>21</td>
-        <td>26</td>
-        <td>0.5</td>
+        <td>23</td>
+        <td>24</td>
+        <td>0.6</td>
       </tr>
       
     </tbody>
@@ -242,11 +242,11 @@
         <div class="source_table" id="d73754491e197513a71a07a3370b43cc7cbff437">
   <div class="header">
     <h3>lib/bank_transaction.rb</h3>
-    <h4><span class="red">76.47 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>17</b> relevant lines. 
-      <span class="green"><b>13</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>17</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -301,32 +301,32 @@
           <code class="ruby">  def initialize(amount:, type:, date:)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
           
           <code class="ruby">    @amount = amount</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
           
           <code class="ruby">    @type = type</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
           
           <code class="ruby">    @date = date</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
           
           <code class="ruby">    check_amount_format(amount)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
           
           <code class="ruby">    check_date_format(date)</code>
         </li>
@@ -367,20 +367,20 @@
           <code class="ruby">    begin</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">      Date.parse(date)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
           
           <code class="ruby">    rescue ArgumentError</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">      raise &quot;Invalid date format&quot;</code>
         </li>
@@ -409,8 +409,8 @@
           <code class="ruby">  def check_amount_format(amount)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="27">
+          <span class="hits">3</span>
           
           <code class="ruby">    if !amount.is_a?(Integer)</code>
         </li>
@@ -658,11 +658,11 @@
         <div class="source_table" id="b13140bd81dd489f43581c4c9c828efc6c7ff115">
   <div class="header">
     <h3>spec/bank_transaction_spec.rb</h3>
-    <h4><span class="red">44.68 %</span> covered</h4>
+    <h4><span class="red">48.94 %</span> covered</h4>
     <div>
       <b>47</b> relevant lines. 
-      <span class="green"><b>21</b> lines covered</span> and
-      <span class="red"><b>26</b> lines missed.</span>
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>24</b> lines missed.</span>
     </div>
   </div>
   
@@ -726,13 +726,13 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">  xit &#39;raises an error is wrong format for date is provided&#39; do</code>
+          <code class="ruby">  it &#39;raises an error is wrong format for date is provided&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    expect { @transaction.withdrawal(100, &quot;31/06/2019&quot;) }.to raise_error(&quot;Invalid&quot; \</code>
+          <code class="ruby">    expect { BankTransaction.new(amount: 1000, type: &#39;credit&#39;, date: &#39;99/01/2019&#39;) }.to raise_error(&quot;Invalid&quot; \</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -741,10 +741,10 @@
           <code class="ruby">      &quot; date format&quot;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    expect { @transaction.withdrawal(100, &quot;01/13/2019&quot;) }.to raise_error(&quot;Invalid&quot; \</code>
+          <code class="ruby">    expect { BankTransaction.new(amount: 1000, type: &#39;credit&#39;, date: &#39;01/13/2019&#39;) }.to raise_error(&quot;Invalid&quot; \</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">

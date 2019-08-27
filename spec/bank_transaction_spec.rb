@@ -7,10 +7,10 @@ describe BankTransaction do
       "Invalid amount format")
   end
 
-  xit 'raises an error is wrong format for date is provided' do
-    expect { @transaction.withdrawal(100, "31/06/2019") }.to raise_error("Invalid" \
+  it 'raises an error is wrong format for date is provided' do
+    expect { BankTransaction.new(amount: 1000, type: 'credit', date: '99/01/2019') }.to raise_error("Invalid" \
       " date format")
-    expect { @transaction.withdrawal(100, "01/13/2019") }.to raise_error("Invalid" \
+    expect { BankTransaction.new(amount: 1000, type: 'credit', date: '01/13/2019') }.to raise_error("Invalid" \
       " date format")
   end
 
