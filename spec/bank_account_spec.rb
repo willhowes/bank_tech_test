@@ -20,8 +20,10 @@ describe BankAccount do
       expect{@account.deposit(1000, '13/01/2012')}.to change{@account.read_current_balance}.by(1000)
     end
 
-    it 'accepts two arguments - the amount and the date' do
-      expect{@account.deposit(1000, '13/01/2012')}.not_to raise_error(ArgumentError)
+    it 'raises an error if not given right number of arguments' do
+      expect{@account.deposit(1000)}.to raise_error(ArgumentError)
+      expect{@account.deposit}.to raise_error(ArgumentError)
+      expect{@account.deposit(1000, '13/01/2012', '01/01/2018')}.to raise_error(ArgumentError)
     end
   end
 
