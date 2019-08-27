@@ -1,11 +1,15 @@
 class BankAccount
 
-  def deposit(amount)
-    amount
+  def initialize
+    @current_balance = 0
   end
 
-  def print_balance
-    0
+  def deposit(amount)
+    @current_balance += amount
+  end
+
+  def read_current_balance
+    @current_balance
   end
 
 end

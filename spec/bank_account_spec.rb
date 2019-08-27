@@ -7,13 +7,17 @@ describe BankAccount do
   end
 
   it 'has a starting balance of 0' do
-    expect(@account.print_balance).to eq 0
+    expect(@account.read_current_balance).to eq 0
   end
 
   describe '.deposit' do
 
     it 'returns the amount deposited' do
       expect(@account.deposit(1000)).to eq 1000
+    end
+
+    it 'amends the balance by the amount deposited' do
+      expect{@account.deposit(1000)}.to change{@account.read_current_balance}.by(1000)
     end
 
   end
