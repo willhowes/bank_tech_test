@@ -14,6 +14,8 @@ class BankAccount
 
   def withdrawal(amount, date)
     @current_balance -= amount
+    @transaction_history << { 'date' => date, 'amount' => amount,
+                              'balance' => @current_balance }
   end
 
   def read_current_balance

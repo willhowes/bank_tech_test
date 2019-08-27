@@ -28,6 +28,17 @@ describe BankAccount do
                                                   'amount' => 50,
                                                   'balance' => 150 }])
     end
+
+    it 'returns details of withdrawals' do
+      @account.deposit(1000, '01/01/2019')
+      @account.withdrawal(500, '02/01/2019')
+      expect(@account.read_transactions).to eq([{ 'date' => '01/01/2019',
+                                                  'amount' => 1000,
+                                                  'balance' => 1000 },
+                                                  { 'date' => '02/01/2019',
+                                                    'amount' => 500,
+                                                    'balance' => 500 } ])
+    end
   end
 
   describe '.deposit' do
