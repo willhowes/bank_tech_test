@@ -8,7 +8,7 @@ class BankStatement
     if @account.transaction_history.empty?
       return "#{print_statement_first_line} || || || 0.00"
     end
-
+    
     return "#{ print_statement_first_line }"\
             "#{ print_statement_lines(formulate_statement_lines(@account.transaction_history)) }"
   end
@@ -17,6 +17,7 @@ class BankStatement
 
   def formulate_statement_lines(transaction_history)
     statement_lines = []
+    transaction_history.sort_by! { |detail| detail['date'] }
     transaction_history.reverse_each do | transaction_details |
       if transaction_details['type'] == 'credit'
         statement_lines << credit_details_string(transaction_details)

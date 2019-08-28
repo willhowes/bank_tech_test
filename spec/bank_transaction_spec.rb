@@ -24,6 +24,7 @@ describe BankTransaction do
   end
 
   it 'raises an error if not given right number of arguments' do
+    expect { BankTransaction.new(amount: "1000") }.to raise_error(ArgumentError)
     expect { BankTransaction.new(amount: 1000) }.to raise_error(ArgumentError)
     expect { BankTransaction.new(amount: 1000,
                                   type: "debit") }.to raise_error(ArgumentError)

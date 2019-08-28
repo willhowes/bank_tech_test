@@ -47,20 +47,21 @@ describe BankStatement do
                                               " -1000.00")
     end
 
-    it 'prints a statement with details of two transactions' do
+    it "prints a statement with details of two transactions. "\
+        "Transactions given in wrong order " do
       allow(account).to receive(:transaction_history).and_return([
-        { 'date' => "01/01/2019",
-          'amount' => 1000,
-          'type' => 'credit',
-          'balance' => 1000
+        { 'date' => "02/01/2019",
+          'amount' => 1000.00,
+          'type' => 'debit',
+          'balance' => 0.00
           },
         { 'date' => "01/01/2019",
           'amount' => 1000,
-          'type' => 'debit',
-          'balance' => 0.00
+          'type' => 'credit',
+          'balance' => 1000.00
           } ])
       expect(@statement.print).to eq("date || credit || debit || balance\n"\
-                                      "01/01/2019 || || 1000.00 || 0.00\n"\
+                                      "02/01/2019 || || 1000.00 || 0.00\n"\
                                       "01/01/2019 || 1000.00 || || 1000.00")
     end
   end

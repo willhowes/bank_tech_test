@@ -134,6 +134,7 @@
         null,
         null,
         1,
+        null,
         1,
         null,
         null,
@@ -172,6 +173,7 @@
         null,
         1,
         4,
+        11,
         4,
         7,
         4,
@@ -235,6 +237,7 @@
         1,
         2,
         2,
+        2,
         null,
         2,
         null,
@@ -243,7 +246,7 @@
         null
       ],
       "/Users/student/Projects/bank_tech_test/lib/bank_transaction.rb": [
-        null,
+        1,
         1,
         null,
         1,
@@ -280,7 +283,7 @@
         null,
         null,
         null,
-        null
+        1
       ],
       "/Users/student/Projects/bank_tech_test/spec/features_spec.rb": [
         1,
@@ -309,6 +312,6 @@
         null
       ]
     },
-    "timestamp": 1567014047
+    "timestamp": 1567020205
   }
 }
