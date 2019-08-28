@@ -35,14 +35,18 @@ describe BankAccount do
 
     it 'prints a statement with details of one deposit transaction' do
       one_deposit
-      expect(@account.print_statement).to eq("date || credit || debit || balance\n"\
-                                                      "01/01/2019 || 1000.00 || || 1000.00")
+      expect(@account.print_statement).to eq("date || credit || debit || "\
+                                              "balance\n"\
+                                              "01/01/2019 || 1000.00 "\
+                                              "|| || 1000.00")
     end
 
     it 'prints a statement with details of one withdrawal transaction' do
       one_withdrawal
-      expect(@account.print_statement).to eq("date || credit || debit || balance\n"\
-                                                      "01/01/2019 || || 1000.00 || -1000.00")
+      expect(@account.print_statement).to eq("date || credit || debit || "\
+                                              "balance\n"\
+                                              "01/01/2019 || || 1000.00 ||"\
+                                              " -1000.00")
     end
 
     it 'prints a statement with details of several transactions' do

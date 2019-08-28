@@ -11,7 +11,8 @@ class BankAccount
     @transaction_history << { 'date' => transaction.date,
                               'amount' => transaction.amount,
                               'type' => transaction.type,
-                              'balance' => amend_balance_after_transaction(transaction)
+                              'balance' =>
+                                amend_balance_after_transaction(transaction)
                             }
     amend_current_balance(transaction)
   end
