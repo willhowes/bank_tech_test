@@ -1,6 +1,6 @@
 class BankAccount
 
-  attr_reader :transaction_history
+  attr_reader :transaction_history, :current_balance
 
   def initialize
     @transaction_history = []

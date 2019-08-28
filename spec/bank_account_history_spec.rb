@@ -9,7 +9,7 @@ describe BankAccount do
   let(:transaction) { double :transaction, amount: nil, type: nil, date: nil }
 
   describe '#handle_transaction' do
-    
+
     it 'saves the history of the transaction' do
       one_deposit
       expect(@account.transaction_history[0]).to eq ({ 'date' => '01/01/2019',
@@ -17,8 +17,11 @@ describe BankAccount do
                                             'type' => 'credit',
                                             'balance' => 1000.0 })
     end
-    # INSERT TESTS HERE THAT CURRENT BALANCE IS CHANGED EACH TRANSACTION
 
+    it 'amends the current balance' do
+      one_deposit
+      expect(@account.current_balance).to eq(1000.0)
+    end
   end
 
 
