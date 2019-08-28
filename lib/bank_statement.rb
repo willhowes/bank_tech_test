@@ -8,7 +8,7 @@ class BankStatement
     if @account.transaction_history.empty?
       return "#{print_statement_first_line} || || || 0.00"
     end
-    
+
     return "#{ print_statement_first_line }"\
             "#{ print_statement_lines(formulate_statement_lines(@account.transaction_history)) }"
   end
@@ -34,19 +34,19 @@ class BankStatement
 
   def print_statement_lines(lines)
     lines.map do |details|
-      "#{details.to_s}"
+      "#{details}"
     end
     lines.join("\n")
   end
 
   def credit_details_string(transaction_details)
-    "#{ transaction_details['date'] } || "\
+    "#{ transaction_details['date'].strftime('%d/%m/%Y') } || "\
     "#{ '%.2f' % transaction_details['amount'] }"\
     " || || #{ '%.2f' % transaction_details['balance'] }"
   end
 
   def debit_details_string(transaction_details)
-    "#{ transaction_details['date'] } || "\
+    "#{ transaction_details['date'].strftime('%d/%m/%Y') } || "\
     "|| #{ '%.2f' % transaction_details['amount'] }"\
     " || #{ '%.2f' % transaction_details['balance'] }"
   end

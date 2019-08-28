@@ -22,47 +22,49 @@ describe BankStatement do
     end
 
     it 'prints a statement with details of one deposit transaction' do
+      time = Time.new
       allow(account).to receive(:transaction_history).and_return([
-        { 'date' => "01/01/2019",
+        { 'date' => time,
           'amount' => 1000,
           'type' => 'credit',
           'balance' => 1000
           } ])
       expect(@statement.print).to eq("date || credit || debit || "\
                                               "balance\n"\
-                                              "01/01/2019 || 1000.00 "\
+                                              "#{ time.strftime('%d/%m/%Y') } || 1000.00 "\
                                               "|| || 1000.00")
     end
 
     it 'prints a statement with details of one withdrawal transaction' do
+      time = Time.new
       allow(account).to receive(:transaction_history).and_return([
-        { 'date' => "01/01/2019",
+        { 'date' => time,
           'amount' => 1000,
           'type' => 'debit',
           'balance' => -1000
           } ])
       expect(@statement.print).to eq("date || credit || debit || "\
                                               "balance\n"\
-                                              "01/01/2019 || || 1000.00 ||"\
+                                              "#{ time.strftime('%d/%m/%Y') } || || 1000.00 ||"\
                                               " -1000.00")
     end
 
-    it "prints a statement with details of two transactions. "\
-        "Transactions given in wrong order " do
+    it "prints a statement with details of two transactions" do
+      time = Time.new
       allow(account).to receive(:transaction_history).and_return([
-        { 'date' => "02/01/2019",
-          'amount' => 1000.00,
-          'type' => 'debit',
-          'balance' => 0.00
-          },
-        { 'date' => "01/01/2019",
+        { 'date' => time,
           'amount' => 1000,
           'type' => 'credit',
           'balance' => 1000.00
-          } ])
+        },
+        { 'date' => time,
+          'amount' => 1000.00,
+          'type' => 'debit',
+          'balance' => 0.00
+        }])
       expect(@statement.print).to eq("date || credit || debit || balance\n"\
-                                      "02/01/2019 || || 1000.00 || 0.00\n"\
-                                      "01/01/2019 || 1000.00 || || 1000.00")
+                                      "#{ time.strftime('%d/%m/%Y') } || || 1000.00 || 0.00\n"\
+                                      "#{ time.strftime('%d/%m/%Y') } || 1000.00 || || 1000.00")
     end
   end
 end
