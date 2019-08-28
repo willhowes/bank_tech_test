@@ -31,9 +31,7 @@ class BankTransaction
   end
 
   def check_type_format(type)
-    p "TYPE: #{type}"
     raise 'Invalid transaction type' unless type == 'credit' || type == 'debit'
-
   end
 end
 
