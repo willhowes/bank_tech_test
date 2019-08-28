@@ -38,7 +38,7 @@ class BankAccount
       return "#{print_statement_first_line} || || || 0.00"
     else
       statement_lines = []
-      @transaction_history.each do | transaction |
+      @transaction_history.reverse_each do | transaction |
         if transaction['type'] == 'credit'
           statement_lines << "#{ transaction['date'] } || "\
           "#{ '%.2f' % transaction['amount'] } || || #{ '%.2f' % transaction['balance'] }"

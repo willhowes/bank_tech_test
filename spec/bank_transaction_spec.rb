@@ -32,13 +32,3 @@ describe BankTransaction do
                                   }.not_to raise_error(SyntaxError)
   end
 end
-
-private
-
-def make_deposit
-  @transaction.deposit(1000.00, '01/01/2019')
-end
-
-def make_withdrawal
-  @transaction.withdrawal(500.00, '02/01/2019')
-end

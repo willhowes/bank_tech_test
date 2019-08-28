@@ -51,18 +51,15 @@ describe BankAccount do
 
     it 'prints a statement with details of several transactions' do
       one_deposit
+      one_deposit
       one_withdrawal
       one_deposit
-      one_deposit
       expect(@account.print_statement).to eq("date || credit || debit || balance\n"\
-                                                      "01/01/2019 || 1000.00 || || 1000.00\n"\
-                                                      "01/01/2019 || || 1000.00 || 0.00\n"\
-                                                      "01/01/2019 || 1000.00 || || 1000.00\n"\
-                                                      "01/01/2019 || 1000.00 || || 2000.00")
+                                                      "01/01/2019 || 1000.00 || || 2000.00\n"\
+                                                      "01/01/2019 || || 1000.00 || 1000.00\n"\
+                                                      "01/01/2019 || 1000.00 || || 2000.00\n"\
+                                                      "01/01/2019 || 1000.00 || || 1000.00")
     end
-
-    # INSERT TEST HERE FOR THE INSTRUCTION REQUIREMENTS OR AMEND THE ONE ABOVE
-
   end
 end
 
