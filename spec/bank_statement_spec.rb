@@ -34,24 +34,34 @@ describe BankStatement do
                                               "|| || 1000.00")
     end
 
-    xit 'prints a statement with details of one withdrawal transaction' do
-      one_withdrawal(account)
+    it 'prints a statement with details of one withdrawal transaction' do
+      allow(account).to receive(:transaction_history).and_return([
+        { 'date' => "01/01/2019",
+          'amount' => 1000,
+          'type' => 'debit',
+          'balance' => -1000
+          } ])
       expect(@statement.print).to eq("date || credit || debit || "\
                                               "balance\n"\
                                               "01/01/2019 || || 1000.00 ||"\
                                               " -1000.00")
     end
 
-    xit 'prints a statement with details of several transactions' do
-      one_deposit(account)
-      one_deposit(account)
-      one_withdrawal(account)
-      one_deposit(account)
+    it 'prints a statement with details of two transactions' do
+      allow(account).to receive(:transaction_history).and_return([
+        { 'date' => "01/01/2019",
+          'amount' => 1000,
+          'type' => 'credit',
+          'balance' => 1000
+          },
+        { 'date' => "01/01/2019",
+          'amount' => 1000,
+          'type' => 'debit',
+          'balance' => 0.00
+          } ])
       expect(@statement.print).to eq("date || credit || debit || balance\n"\
-                                                      "01/01/2019 || 1000.00 || || 2000.00\n"\
-                                                      "01/01/2019 || || 1000.00 || 1000.00\n"\
-                                                      "01/01/2019 || 1000.00 || || 2000.00\n"\
-                                                      "01/01/2019 || 1000.00 || || 1000.00")
+                                      "01/01/2019 || || 1000.00 || 0.00\n"\
+                                      "01/01/2019 || 1000.00 || || 1000.00")
     end
   end
 end
