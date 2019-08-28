@@ -24,9 +24,9 @@ class BankAccount
 
   def amend_balance_after_transaction(transaction)
     if transaction.type == 'credit'
-      @current_balance + transaction.amount
+      return @current_balance + transaction.amount
     else
-      @current_balance - transaction.amount
+      return @current_balance - transaction.amount
     end
   end
 
@@ -36,7 +36,6 @@ class BankAccount
     else
       statement_lines = []
       @transaction_history.each do | transaction |
-        p " #{transaction }  - TRANSACTION"
         if transaction['type'] == 'credit'
           statement_lines << "#{ transaction['date'] } || "\
           "#{ '%.2f' % transaction['amount'] } || || #{ '%.2f' % transaction['balance'] }"
@@ -56,10 +55,9 @@ class BankAccount
   end
 
   def print_statement_lines(lines)
-    all_lines = []
-    lines.each do |details|
-      all_lines << "#{details.to_s}\n"
+    lines.map do |details|
+      "#{details.to_s}"
     end
-    all_lines.join('')[0..-2]
+    lines.join("\n")
   end
 end

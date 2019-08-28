@@ -19,46 +19,6 @@ describe BankTransaction do
       " transaction type")
   end
 
-  xit 'has a starting balance of 0' do
-    expect(@transaction.read_current_balance).to eq 0
-  end
-
-  describe '.read_transactions' do
-    xit 'returns details of one transaction' do
-      make_deposit
-      expect(@transaction.read_transactions).to eq([{ 'date' => '01/01/2019',
-                                                      'type' => 'credit',
-                                                      'amount' => 1000.00,
-                                                      'balance' => 1000.00 }])
-    end
-
-    xit 'returns details of two transactions' do
-      make_deposit
-      @transaction.deposit(500.00, '26/12/2018')
-      expect(@transaction.read_transactions).to eq([{ 'date' => '01/01/2019',
-                                                  'type' => 'credit',
-                                                  'amount' => 1000.00,
-                                                  'balance' => 1000.00 },
-                                                { 'date' => '26/12/2018',
-                                                  'type' => 'credit',
-                                                  'amount' => 500.00,
-                                                  'balance' => 1500.00 }])
-    end
-
-    xit 'returns details of withdrawals' do
-      make_deposit
-      make_withdrawal
-      expect(@transaction.read_transactions).to eq([{ 'date' => '01/01/2019',
-                                                  'type' => 'credit',
-                                                  'amount' => 1000.00,
-                                                  'balance' => 1000.00 },
-                                                  { 'date' => '02/01/2019',
-                                                    'type' => 'debit',
-                                                    'amount' => 500.00,
-                                                    'balance' => 500.00 } ])
-    end
-  end
-
   describe '.deposit' do
     xit 'amends the transaction balance by the amount deposited' do
       expect { make_deposit }.to change {
