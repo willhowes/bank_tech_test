@@ -16,8 +16,13 @@ class BankAccountHistory
     else
       statement_lines = []
       @transaction_history.each do | transaction |
-        statement_lines << "#{ transaction.date } || "\
-        "#{ '%.2f' % transaction.amount } || || #{ '%.2f' % @current_balance }"
+        if transaction.type == 'credit'
+          statement_lines << "#{ transaction.date } || "\
+          "#{ '%.2f' % transaction.amount } || || #{ '%.2f' % @current_balance }"
+        else
+          statement_lines << "#{ transaction.date } || "\
+          "|| #{ '%.2f' % transaction.amount } || #{ '%.2f' % @current_balance }"
+        end
       end
       return "#{ print_statement_first_line }#{ print_statement_lines(statement_lines) }"
     end
