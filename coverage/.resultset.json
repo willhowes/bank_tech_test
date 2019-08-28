@@ -24,13 +24,9 @@
         1,
         1,
         1,
-        1,
-        1,
         null,
         null,
         null,
-        1,
-        1,
         1,
         1,
         1,
@@ -39,6 +35,18 @@
         null,
         null,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/student/Projects/bank_tech_test/lib/bank_account_history.rb": [
@@ -52,6 +60,14 @@
         1,
         2,
         2,
+        null,
+        null,
+        1,
+        2,
+        1,
+        null,
+        1,
+        null,
         null,
         null,
         1,
@@ -244,6 +260,6 @@
         null
       ]
     },
-    "timestamp": 1566974997
+    "timestamp": 1566975341
   }
 }

@@ -5,9 +5,17 @@ class BankAccountHistory
     @current_balance = 0
   end
 
-  def receive_transaction(transaction)
+  def handle_transaction(transaction)
     @transaction_history << transaction
-    @current_balance += transaction.amount
+    amend_balance(transaction)
+  end
+
+  def amend_balance(transaction)
+    if transaction.type == 'credit'
+      @current_balance += transaction.amount
+    else
+      @current_balance -= transaction.amount
+    end
   end
 
   def print_statement
