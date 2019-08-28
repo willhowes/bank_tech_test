@@ -19,45 +19,10 @@ describe BankTransaction do
       " transaction type")
   end
 
-  describe '.deposit' do
-    xit 'amends the transaction balance by the amount deposited' do
-      expect { make_deposit }.to change {
-        @transaction.read_current_balance }.by(1000.00)
-    end
-
-    xit 'raises an error if not given right number of arguments' do
-      expect { @transaction.deposit(1000.00) }.to raise_error(ArgumentError)
-      expect { @transaction.deposit }.to raise_error(ArgumentError)
-      expect { @transaction.deposit(1000.00,
-              '13/01/2012', '01/01/2018') }.to raise_error(ArgumentError)
-    end
-
-    xit 'raises an error if the wrong format is provided for amount' do
-      expect { @transaction.deposit('100', '01/01/2019' ) }.to raise_error(""\
-        "Invalid amount format")
-    end
-
-    xit 'raises an error is wrong format for date is provided' do
-      expect { @transaction.deposit(100, "31/06/2019") }.to raise_error("Invalid" \
-        " date format")
-      expect { @transaction.deposit(100, "01/13/2019") }.to raise_error("Invalid" \
-        " date format")
-    end
-
-  end
-
-  describe '.withdrawal' do
-    xit 'amends the reduces the transaction balance by the withdrawal amount' do
-      expect { make_withdrawal }.to change {
-        @transaction.read_current_balance }.by(-500.00)
-    end
-
-    xit 'raises an error if not given right number of arguments' do
-      expect { @transaction.withdrawal(1000.00) }.to raise_error(ArgumentError)
-      expect { @transaction.withdrawal }.to raise_error(ArgumentError)
-      expect { @transaction.withdrawal(1000.00, '13/01/2012',
-        '01/01/2018') }.to raise_error(ArgumentError)
-    end
+  it 'raises an error if not given right number of arguments' do
+    expect { BankTransaction.new(amount: 1000) }.to raise_error(ArgumentError)
+    expect { BankTransaction.new(amount: 1000, type: "debit") }.to raise_error(ArgumentError)
+    expect { BankTransaction.new(amount: 1000, type: "debit", date: "01/01/2019") }.not_to raise_error(SyntaxError)
   end
 end
 

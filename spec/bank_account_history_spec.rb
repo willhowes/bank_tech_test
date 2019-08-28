@@ -33,7 +33,7 @@ describe BankAccount do
                                                       " || || || 0.00")
     end
 
-    it 'prints a statement with details of one deposit ransaction' do
+    it 'prints a statement with details of one deposit transaction' do
       one_deposit
       expect(@account.print_statement).to eq("date || credit || debit || balance\n"\
                                                       "01/01/2019 || 1000.00 || || 1000.00")
