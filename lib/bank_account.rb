@@ -8,18 +8,22 @@ class BankAccount
   end
 
   def withdrawal(amount)
+    check_amount_format(amount)
     date = Time.new
     type = 'debit'
-    handle_transaction(amount, date, type)
+    save_transaction(amount, date, type)
   end
 
   def deposit(amount)
+    check_amount_format(amount)
     date = Time.new
     type = 'credit'
-    handle_transaction(amount, date, type)
+    save_transaction(amount, date, type)
   end
 
-  def handle_transaction(amount, date, type)
+  private
+
+  def save_transaction(amount, date, type)
     @transaction_history << {
       'date' => date,
       'amount' => amount,
@@ -43,5 +47,9 @@ class BankAccount
     else
       return @current_balance - amount
     end
+  end
+
+  def check_amount_format(amount)
+    raise 'Invalid amount format' unless amount.is_a?(Float)
   end
 end

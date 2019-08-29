@@ -2,7 +2,7 @@ require 'bank_transaction'
 
 describe BankTransaction do
 
-  it 'raises an error if the wrong format is provided for amount' do
+  it 'raises an error if the wrong amount format is provided' do
     expect { BankTransaction.new(amount: '1000.00', type: 'credit')
             }.to raise_error("Invalid amount format")
   end
