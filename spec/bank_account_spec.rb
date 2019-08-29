@@ -34,28 +34,40 @@ describe BankAccount do
   describe '#withdrawal' do
 
     it 'correctly amends the account balance' do
-      @account.withdrawal(1000)
-      expect(@account.current_balance).to eq(-1000)
+      one_withdrawal(1000.00)
+      expect(@account.current_balance).to eq(-1000.00)
+    end
+
+    it 'is recorded in the transaction history' do
+      one_withdrawal(500.00)
+      expect(@account.transaction_history).to eq( [{'date' => @time,
+                                                    'amount' => 500.00,
+                                                    'type' => 'debit',
+                                                    'balance' => -500.00 }])
     end
   end
 
   describe '#deposit' do
 
     it 'correctly amends the account balance' do
-      one_deposit(1000)
-      expect(@account.current_balance).to eq(1000)
+      one_deposit(1000.00)
+      expect(@account.current_balance).to eq(1000.00)
     end
 
     it 'is recorded in the transaction history' do
-      one_deposit(500)
+      one_deposit(500.00)
       expect(@account.transaction_history).to eq( [{'date' => @time,
-                                                    'amount' => 500,
+                                                    'amount' => 500.00,
                                                     'type' => 'credit',
-                                                    'balance' => 500 }])
+                                                    'balance' => 500.00 }])
     end
   end
 end
 
 def one_deposit(amount)
   @account.deposit(amount)
+end
+
+def one_withdrawal(amount)
+  @account.withdrawal(amount)
 end
