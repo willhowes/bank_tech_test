@@ -28,10 +28,17 @@ describe BankAccount do
 
   describe '#withdrawal' do
 
-    it 'correctly amends the accout balance' do
+    it 'correctly amends the account balance' do
       @account.withdrawal(1000, Time.new)
       expect(@account.current_balance).to eq(-1000)
     end
+  end
 
+  describe '#deposit' do
+
+    it 'correctly amends the account balance' do
+      @account.deposit(1000, Time.new)
+      expect(@account.current_balance).to eq(1000)
+    end
   end
 end

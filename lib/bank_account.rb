@@ -11,6 +11,10 @@ class BankAccount
     amend_current_balance(amount, date, 'debit')
   end
 
+  def deposit(amount, date)
+    amend_current_balance(amount, date, 'credit')
+  end
+
   def handle_transaction(transaction)
     @transaction_history << {
       'date' => transaction.date,
