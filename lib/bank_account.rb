@@ -7,6 +7,10 @@ class BankAccount
     @current_balance = 0
   end
 
+  def withdrawal(amount, date)
+    amend_current_balance(amount, date, 'debit')
+  end
+
   def handle_transaction(transaction)
     @transaction_history << {
       'date' => transaction.date,
@@ -17,11 +21,11 @@ class BankAccount
     amend_current_balance(transaction)
   end
 
-  def amend_current_balance(transaction)
-    if transaction.type == 'credit'
-      @current_balance += transaction.amount
+  def amend_current_balance(amount, date, type)
+    if type == 'credit'
+      @current_balance += amount
     else
-      @current_balance -= transaction.amount
+      @current_balance -= amount
     end
   end
 

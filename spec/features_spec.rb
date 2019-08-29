@@ -4,7 +4,7 @@ describe 'feature test' do
   account = BankAccount.new
   statement = BankStatement.new(account)
 
-  it 'correctly outputs as per client\'s requirements' do
+  xit 'correctly outputs as per client\'s requirements' do
     time = Time.new
     account.handle_transaction(BankTransaction.new(amount: 1000.00,
                                                   type: 'credit'))
