@@ -1,11 +1,16 @@
 require 'bank_account'
 require_relative './test_helpers.rb'
+require 'timecop'
 
 
 describe BankAccount do
 
   before(:each) do
     @account = BankAccount.new
+  end
+
+  before(:each) do
+    @time = Timecop.freeze(Time.local(1990))
   end
 
   let(:transaction) { double :transaction, amount: nil, type: nil, date: nil }
@@ -29,7 +34,7 @@ describe BankAccount do
   describe '#withdrawal' do
 
     it 'correctly amends the account balance' do
-      @account.withdrawal(1000, Time.new)
+      @account.withdrawal(1000)
       expect(@account.current_balance).to eq(-1000)
     end
   end
@@ -37,8 +42,20 @@ describe BankAccount do
   describe '#deposit' do
 
     it 'correctly amends the account balance' do
-      @account.deposit(1000, Time.new)
+      one_deposit(1000)
       expect(@account.current_balance).to eq(1000)
     end
+
+    it 'is recorded in the transaction history' do
+      one_deposit(500)
+      expect(@account.transaction_history).to eq( [{'date' => @time,
+                                                    'amount' => 500,
+                                                    'type' => 'credit',
+                                                    'balance' => 500 }])
+    end
   end
+end
+
+def one_deposit(amount)
+  @account.deposit(amount)
 end

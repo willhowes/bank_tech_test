@@ -26,6 +26,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    timecop (0.9.1)
     unicode-display_width (1.6.0)
 
 PLATFORMS
@@ -35,6 +36,7 @@ DEPENDENCIES
   pry (~> 0.12.2)
   rubocop
   simplecov
+  timecop
 
 BUNDLED WITH
    2.0.2
