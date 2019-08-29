@@ -17,16 +17,16 @@ describe BankAccount do
 
   describe '#save_transaction' do
 
-    xit 'saves the history of the transaction' do
-      one_deposit(@account)
-      expect(@account.transaction_history[0]).to eq ({ 'date' => '01/01/2019',
+    it 'saves the history of the transaction' do
+      one_deposit(@account, 1000.0)
+      expect(@account.transaction_history[0]).to eq ({ 'date' => @time,
                                             'amount' => 1000.0,
                                             'type' => 'credit',
                                             'balance' => 1000.0 })
     end
 
-    xit 'amends the current balance' do
-      one_deposit(@account)
+    it 'amends the current balance' do
+      one_deposit(@account, 1000.0)
       expect(@account.current_balance).to eq(1000.0)
     end
   end

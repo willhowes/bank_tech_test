@@ -2,10 +2,13 @@
 This is my attempt at the Makers Academy [bank tech test](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
 
 ## Tech Stack
+```
 Language: Ruby
 Testing Framework: rspec
 Test Coverage: simpleCov
 Linter: Rubocop
+Tool for testing time: Timecop
+```
 
 ## Approach
 * I used Test Driven Development(TDD) using consistent GREEN-RED-REFACTOR cycles.
