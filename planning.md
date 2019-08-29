@@ -5,19 +5,15 @@
 * amount
 * date
 
-#### Methods
-* read_amount
-* read_date
-* read_credit_or_debit
-
-### BankAccountHistory
+### BankAccount
 #### Variables:
 * current_balance (int)
 * transaction_history (hash? or array of hashes)
 
 #### Methods
-* print statement (string)
+* handle_transaction
 
+### BankStatement
 
-BankAccountTransactions.deposit -----> BankAccountHistory
-BankAccountTransactions.withdrawal ----> BankAccountHistory
+#### Methods
+* print

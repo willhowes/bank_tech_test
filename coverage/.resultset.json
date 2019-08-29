@@ -236,8 +236,6 @@
       ],
       "/Users/student/Projects/bank_tech_test/lib/bank_transaction.rb": [
         1,
-        1,
-        1,
         null,
         1,
         null,
@@ -248,30 +246,17 @@
         5,
         5,
         5,
-        null,
         4,
         null,
         null,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         5,
-        1,
-        null,
         null,
         null,
         1,
         4,
-        null,
-        null,
         null,
         null
       ],
@@ -300,6 +285,6 @@
         null
       ]
     },
-    "timestamp": 1567024367
+    "timestamp": 1567064201
   }
 }
