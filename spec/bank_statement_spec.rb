@@ -6,15 +6,19 @@ describe BankStatement do
   let(:account) { double :account, transaction_history: [],
                                     current_balance: 0}
 
-  let(:transaction) { double :transaction, amount: nil, type: nil, date: nil }
-
-
   before(:each) do
     @statement = BankStatement.new(account)
   end
 
-  describe '.print' do
+  before do
+    Timecop.freeze(Time.local(1990))
+  end
 
+  after do
+    Timecop.return
+  end
+
+  describe '.print' do
     it 'prints a blank statement if no transactions have been made' do
       expect(@statement.print).to eq ("date || credit || debit"\
                                                       " || balance\n"\

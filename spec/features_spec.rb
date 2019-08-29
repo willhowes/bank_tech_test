@@ -11,8 +11,8 @@ describe 'feature test' do
   end
 
   after do
-   Timecop.return
- end
+    Timecop.return
+  end
 
   it 'correctly outputs as per client\'s requirements' do
     time = Time.new

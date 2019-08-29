@@ -1,9 +1,4 @@
 ## Classes
-### BankTransaction
-#### Variables:
-* credit_or_debit
-* amount
-* date
 
 ### BankAccount
 #### Variables:
@@ -11,6 +6,8 @@
 * transaction_history (hash? or array of hashes)
 
 #### Methods
+* deposit
+* withdrawal
 * handle_transaction
 
 ### BankStatement

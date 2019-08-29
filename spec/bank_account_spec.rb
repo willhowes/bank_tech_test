@@ -2,7 +2,6 @@ require 'bank_account'
 require_relative './test_helpers.rb'
 require 'timecop'
 
-
 describe BankAccount do
 
   before(:each) do
@@ -12,8 +11,6 @@ describe BankAccount do
   before(:each) do
     @time = Timecop.freeze(Time.local(1990))
   end
-
-  let(:transaction) { double :transaction, amount: nil, type: nil, date: nil }
 
   describe '#save_transaction' do
 
