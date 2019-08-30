@@ -77,7 +77,6 @@
       ],
       "/Users/student/Projects/bank_tech_test/lib/bank_account.rb": [
         1,
-        null,
         1,
         null,
         1,
@@ -219,7 +218,6 @@
       ],
       "/Users/student/Projects/bank_tech_test/lib/bank_statement.rb": [
         1,
-        null,
         1,
         5,
         null,
@@ -227,9 +225,9 @@
         1,
         5,
         1,
-        null,
         null,
         4,
+        null,
         null,
         null,
         null,
@@ -302,6 +300,6 @@
         null
       ]
     },
-    "timestamp": 1567074124
+    "timestamp": 1567147939
   }
 }

@@ -1,16 +1,15 @@
 class BankStatement
-
   def initialize(account)
     @account = account
   end
 
   def print
     if @account.transaction_history.empty?
-      return "#{print_statement_first_line} || || || 0.00"
+      "#{print_statement_first_line} || || || 0.00"
+    else
+      return "#{ print_statement_first_line }"\
+      "#{print_statement_lines(formulate_statement_lines(@account.transaction_history))}"
     end
-
-    return "#{ print_statement_first_line }"\
-            "#{ print_statement_lines(formulate_statement_lines(@account.transaction_history)) }"
   end
 
   private
@@ -40,14 +39,14 @@ class BankStatement
   end
 
   def credit_details_string(transaction_details)
-    "#{ transaction_details['date'].strftime('%d/%m/%Y') } || "\
-    "#{ '%.2f' % transaction_details['amount'] }"\
-    " || || #{ '%.2f' % transaction_details['balance'] }"
+    "#{transaction_details['date'].strftime('%d/%m/%Y')} || "\
+    "#{'%.2f' % transaction_details['amount']}"\
+    " || || #{'%.2f' % transaction_details['balance']}"
   end
 
   def debit_details_string(transaction_details)
-    "#{ transaction_details['date'].strftime('%d/%m/%Y') } || "\
-    "|| #{ '%.2f' % transaction_details['amount'] }"\
-    " || #{ '%.2f' % transaction_details['balance'] }"
+    "#{transaction_details['date'].strftime('%d/%m/%Y')} || "\
+    "|| #{'%.2f' % transaction_details['amount']}"\
+    " || #{'%.2f' % transaction_details['balance']}"
   end
 end

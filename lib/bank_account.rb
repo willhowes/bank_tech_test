@@ -1,5 +1,4 @@
 class BankAccount
-
   attr_reader :transaction_history, :current_balance
 
   def initialize
@@ -29,7 +28,7 @@ class BankAccount
       'amount' => amount,
       'type' => type,
       'balance' => amend_balance_after_transaction(amount, type)
-      }
+    }
     amend_current_balance(amount, type)
   end
 
@@ -43,9 +42,9 @@ class BankAccount
 
   def amend_balance_after_transaction(amount, type)
     if type == 'credit'
-      return @current_balance + amount
+      @current_balance + amount
     else
-      return @current_balance - amount
+      @current_balance - amount
     end
   end
 
