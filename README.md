@@ -1,43 +1,3 @@
-# Bank Tech Test - Makers Academy Week 10
-This is my attempt at the Makers Academy [bank tech test](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
-
-## Tech Stack
-```
-Language: Ruby
-Testing Framework: rspec
-Test Coverage: simpleCov
-Linter: Rubocop
-Tool for freezing time on testing: Timecop
-```
-
-## How to install and run
-* Go to your command line/terminal
-* Clone this repository
-```
-git clone
-```
-* Run bundle install
-```
-bundle install
-```
-
-* Go to your terminal and run the following commands
-```
-git clone git@github.com:willhowes/bank_tech_test.git
-cd bank-tech-test
-gem install bundler
-bundle install
-```
-* Run from a ruby repl, such as [PRY](https://github.com/pry/pry) or IRB
-- In the repl require the Bank Account file
-```
-require './lib/bank_account.rb'
-require './lib/bank_statement.rb'
-```
-## How to run the tests
-run ```rspec``` in your command line from the project folder i.e. (```bank_tech_test```)
-
-## Example interraction in IRB
 ```
 require './lib/bank_account.rb'
  => true
@@ -66,20 +26,20 @@ date || credit || debit || balance
 ## Approach
 * I used Test Driven Development(TDD) using consistent RED-GREEN-REFACTOR cycles.
 
-* At the outset I did some planning which is in the ```planning.md``` file, and this was updated as the program evolved and when I used class extraction.
+* At the outset, I sketched out a domain model which is in the ```planning.md``` file. This was updated as the program evolved and when I used class extraction.
 
-* Initially the program was built using one class BankAccount. However, as the program became larger, it was apparent that this class was doing too much and breaking the Single Responsibility Principal ('SRP'). Therefore, I used class extraction to break the program into two classes:
-- BankTransaction (which has the attributes of a bank transaction, e.g. amount, date, etc)
-- BankAccount (which stores a history of transactions and also can also print statement)
+* Initially, the program was built using one class: ```BankAccount```. However, as the program grew, it was apparent that this class was doing too much and breaking the Single Responsibility Principal ('SRP'). Therefore, I used class extraction to break the program into two classes:
+1. BankTransaction - which had the attributes of a bank transaction, e.g. amount, date, etc)
+2. BankAccount - which stored a history of transactions and printed the statement)
 
-* As can be seen from the above the BankAccount class was still clearly breaking SRP as it hand two main functions. Therefore, I used class extraction to break the BankAccount class into two classes, giving three classes:
+* As can be seen from the above, the BankAccount class was still clearly breaking SRP as it hand two main functions. Therefore, I used class extraction to break the BankAccount class into two classes, giving three in total:
 
-- BankTransaction (as above)
-- BankAccount (stores a history of the transactions)
-- BankStatement (prints off a statement)
+1. BankTransaction (as above)
+2. BankAccount (stores a history of the transactions)
+3. BankStatement (prints off a statement)
 
-* Having reviewed my code again, I realised that my BankTransaction class only stored data for an individual transaction it dit not actuall 'do' anything (i.e. it did not have any methods, except private methods for checking the arguments were in the correct format). Therefore, I decided that the BankAccount class could do this job just as well, in fact it was already storing the data for each transaction in the ```transaction_history``` attribute.
-* The final commit you will see two classes:
+* Having reviewed my code again, I realised that my BankTransaction class only stored data for an individual transaction it dit not actually 'do' anything (i.e. it did not have any methods, except private methods to raise error messages). Therefore, I decided that the BankAccount class could do this job just as well, in fact it was already storing the data for each transaction in the ```transaction_history``` attribute.
+* In the final commit you will see two classes:
 
-- BankAccount - which records transactions
-- BankStatement - which prints of a statement for a given account
+1. BankAccount - which records transactions
+2. BankStatement - which prints of a statement for a given account
