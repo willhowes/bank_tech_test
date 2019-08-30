@@ -10,16 +10,12 @@ class BankAccount
 
   def withdrawal(amount)
     check_amount_format(amount)
-    date = Time.new
-    type = 'debit'
-    save_transaction(amount, date, type)
+    save_transaction(amount, Time.new, 'debit')
   end
 
   def deposit(amount)
     check_amount_format(amount)
-    date = Time.new
-    type = 'credit'
-    save_transaction(amount, date, type)
+    save_transaction(amount, Time.new, 'credit')
   end
 
   private
