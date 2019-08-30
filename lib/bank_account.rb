@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BankAccount
   attr_reader :transaction_history, :current_balance
 

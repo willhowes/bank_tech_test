@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def one_deposit(account, amount)
   account.deposit(amount)
 end

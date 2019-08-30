@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bank_statement'
 require 'timecop'
 require_relative './test_helpers.rb'
@@ -20,8 +22,11 @@ describe 'feature test' do
     one_deposit(account, 2000.00)
     one_withdrawal(account, 500.00)
     expect(statement.print).to eq("date || credit || debit || balance\n"\
-                                          "#{ time.strftime('%d/%m/%Y') } || || 500.00 || 2500.00\n"\
-                                          "#{ time.strftime('%d/%m/%Y') } || 2000.00 || || 3000.00\n"\
-                                          "#{ time.strftime('%d/%m/%Y') } || 1000.00 || || 1000.00")
+                                          "#{time.strftime('%d/%m/%Y')} || || "\
+                                          "500.00 || 2500.00\n"\
+                                          "#{time.strftime('%d/%m/%Y')} || "\
+                                          "2000.00 || || 3000.00\n"\
+                                          "#{time.strftime('%d/%m/%Y')} || "\
+                                          '1000.00 || || 1000.00')
   end
 end
