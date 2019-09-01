@@ -30,6 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   rake
   rubocop
   simplecov
