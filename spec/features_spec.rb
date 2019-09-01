@@ -2,7 +2,6 @@
 
 require 'bank_statement'
 require 'timecop'
-require_relative './test_helpers.rb'
 
 describe 'feature test' do
   account = BankAccount.new
@@ -18,9 +17,9 @@ describe 'feature test' do
 
   it 'correctly outputs as per client\'s requirements' do
     time = Time.new
-    one_deposit(account, 1000.00)
-    one_deposit(account, 2000.00)
-    one_withdrawal(account, 500.00)
+    account.deposit(1000.00)
+    account.deposit(2000.00)
+    account.withdrawal(500.00)
     expect(statement.print).to eq("date || credit || debit || balance\n"\
                                           "#{time.strftime('%d/%m/%Y')} || || "\
                                           "500.00 || 2500.00\n"\

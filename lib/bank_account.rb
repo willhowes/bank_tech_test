@@ -21,13 +21,13 @@ class BankAccount
   private
 
   def save_transaction(amount, date, type)
+    amend_current_balance(amount, type)
     @transaction_history << {
       'date' => date,
       'amount' => amount,
       'type' => type,
-      'balance' => amend_balance_after_transaction(amount, type)
+      'balance' => @current_balance
     }
-    amend_current_balance(amount, type)
   end
 
   def amend_current_balance(amount, type)
@@ -35,14 +35,6 @@ class BankAccount
       @current_balance += amount
     else
       @current_balance -= amount
-    end
-  end
-
-  def amend_balance_after_transaction(amount, type)
-    if type == 'credit'
-      @current_balance + amount
-    else
-      @current_balance - amount
     end
   end
 

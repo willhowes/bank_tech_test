@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'bank_statement'
-require_relative './test_helpers.rb'
 
 describe BankStatement do
   let(:account) do

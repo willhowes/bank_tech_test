@@ -18,7 +18,6 @@ class BankStatement
 
   def formulate_statement_lines(transaction_history)
     statement_lines = []
-    transaction_history.sort_by! { |detail| detail['date'] }
     transaction_history.reverse_each do |transaction_details|
       statement_lines << if transaction_details['type'] == 'credit'
                            credit_details_string(transaction_details)
