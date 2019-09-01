@@ -29,9 +29,6 @@ run rspec in your command line from the project folder i.e. (bank_tech_test)
 ## Screenshot of example interaction in IRB
 <img src="./images/Screenshot 2019-09-01 at 10.04.17.png" width="786" height="522">  
 
-![Screenshot of a terminal running the program]()
-1542 × 1046
-
 ## Approach
 * I used Test Driven Development(TDD) using consistent RED-GREEN-REFACTOR cycles.
 
