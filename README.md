@@ -1,4 +1,6 @@
 # Bank Tech Test - Makers Academy Week 10
+[![Build Status](https://travis-ci.org/willhowes/bank_tech_test.svg?branch=master)](https://travis-ci.org/willhowes/bank_tech_test)
+
 This is my attempt at the [Makers Academy bank tech test](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
 
 ## Tech Stack
