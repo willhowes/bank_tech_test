@@ -1,27 +1,33 @@
+# Bank Tech Test - Makers Academy Week 10
+This is my attempt at the [Makers Academy bank tech test](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
+
+## Tech Stack
+```
+Language: Ruby
+Testing Framework: rspec
+Test Coverage: simpleCov
+Linter: Rubocop
+Tool for freezing time on testing: Timecop
+```
+
+## How to install and run
+Go to your terminal and run the following commands
+```
+git clone git@github.com:willhowes/bank_tech_test.git
+cd bank-tech-test
+gem install bundler
+bundle install
+```
+Run from a ruby repl, such as PRY or IRB
+In the repl require the Bank Account and Bank Statement files
 ```
 require './lib/bank_account.rb'
- => true
-2.6.3 :002 > require './lib/bank_statement.rb'
- => true
-2.6.3 :003 > account = BankAccount.new
- => #<BankAccount:0x00007ff78c9e55f8 @transaction_history=[], @current_balance=0>
-2.6.3 :004 > statement = BankStatement.new(account)
- => #<BankStatement:0x00007ff78c9f5ac0 @account=#<BankAccount:0x00007ff78c9e55f8 @transaction_history=[], @current_balance=0>>
-2.6.3 :005 > account.deposit(1000.00)
-
- => 1000.0
-2.6.3 :006 > account.deposit(2000.00)
- => 3000.0
-2.6.3 :007 > account.withdrawal(500.00)
- => 2500.0
-2.6.3 :008 > statement.print
- => "date || credit || debit || balance\n29/08/2019 || || 500.00 || 2500.00\n29/08/2019 || 2000.00 || || 3000.00\n29/08/2019 || 1000.00 || || 1000.00"
-2.6.3 :009 > puts statement.print
-date || credit || debit || balance
-29/08/2019 || || 500.00 || 2500.00
-29/08/2019 || 2000.00 || || 3000.00
-29/08/2019 || 1000.00 || || 1000.00
+require './lib/bank_statement.rb'
+How to run the tests
+run rspec in your command line from the project folder i.e. (bank_tech_test)
 ```
+## Screenshot of example interaction in IRB
+![Screenshot of a terminal running the program](./images/Screenshot 2019-09-01 at 10.04.17.png)
 
 ## Approach
 * I used Test Driven Development(TDD) using consistent RED-GREEN-REFACTOR cycles.
@@ -43,3 +49,6 @@ date || credit || debit || balance
 
 1. BankAccount - which records transactions
 2. BankStatement - which prints of a statement for a given account
+
+## How to contribute
+* Clone this repository and submit a pull request
