@@ -27,7 +27,7 @@ How to run the tests
 run rspec in your command line from the project folder i.e. (bank_tech_test)
 ```
 ## Screenshot of example interaction in IRB
-![Screenshot of a terminal running the program](./images/Screenshot 2019-09-01 at 10.04.17.png)
+![Screenshot of a terminal running the program]('./images/Screenshot 2019-09-01 at 10.04.17.png')
 
 ## Approach
 * I used Test Driven Development(TDD) using consistent RED-GREEN-REFACTOR cycles.
