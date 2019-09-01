@@ -11,20 +11,21 @@ Tool for freezing time on testing: Timecop
 ```
 
 ## How to install and run
-Go to your terminal and run the following commands
+* Go to your terminal and run the following commands
 ```
 git clone git@github.com:willhowes/bank_tech_test.git
 cd bank-tech-test
 gem install bundler
 bundle install
 ```
-Run from a ruby repl, such as PRY or IRB
-In the repl require the Bank Account and Bank Statement files
+* Run from a ruby repl, such as PRY or IRB.
+* In the repl require the Bank Account and Bank Statement files
 ```
 require './lib/bank_account.rb'
 require './lib/bank_statement.rb'
-How to run the tests
-run rspec in your command line from the project folder i.e. (bank_tech_test)
+```
+## How to run the tests
+* run ```rspec``` in your command line from the project folder i.e. (bank_tech_test)
 ```
 ## Screenshot of example interaction in IRB
 <img src="./images/Screenshot 2019-09-01 at 10.04.17.png" width="786" height="522">  
