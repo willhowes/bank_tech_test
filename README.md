@@ -38,8 +38,8 @@ require './lib/bank_statement.rb'
 * At the outset, I sketched out a domain model which is in the ```planning.md``` file. This was updated as the program evolved and when I used class extraction.
 
 * Initially, the program was built using one class: ```BankAccount```. However, as the program grew, it was apparent that this class was doing too much and breaking the Single Responsibility Principal ('SRP'). Therefore, I used class extraction to break the program into two classes:
-1. BankTransaction - which had the attributes of a bank transaction, e.g. amount, date, etc)
-2. BankAccount - which stored a history of transactions and printed the statement)
+1. BankTransaction - which had the attributes of a bank transaction, e.g. amount, date, etc
+2. BankAccount - which stored a history of transactions and printed the statement
 
 * As can be seen from the above, the BankAccount class was still clearly breaking SRP as it hand two main functions. Therefore, I used class extraction to break the BankAccount class into two classes, giving three in total:
 
