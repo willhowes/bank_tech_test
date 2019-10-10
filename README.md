@@ -47,7 +47,7 @@ require './lib/bank_statement.rb'
 2. BankAccount (stores a history of the transactions)
 3. BankStatement (prints off a statement)
 
-* Having reviewed my code again, I realised that my BankTransaction class only stored data for an individual transaction it dit not actually 'do' anything (i.e. it did not have any methods, except private methods to raise error messages). Therefore, I decided that the BankAccount class could do this job just as well, in fact it was already storing the data for each transaction in the ```transaction_history``` attribute.
+* Having reviewed my code again, I realised that my BankTransaction class only stored data for an individual transaction it did not actually 'do' anything (i.e. it did not have any methods, except private methods to raise error messages). Therefore, I decided that the BankAccount class could do this job just as well, in fact it was already storing the data for each transaction in the ```transaction_history``` attribute.
 * In the final commit you will see two classes:
 
 1. BankAccount - which records transactions
